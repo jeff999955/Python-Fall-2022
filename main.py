@@ -6,6 +6,7 @@ question_list = [
         prompt="print(type(0.56)) 顯示的結果為何?",
         answer="float",
         choices=["int", "float", "str", "bool"],
+        tutorial="https://youtu.be/P5C8u7diAYk",
     ),
 ]
 
@@ -15,3 +16,4 @@ for question in question_list:
         print("Correct!")
     else:
         print("Incorrect!")
+        question.show_tutorial()
