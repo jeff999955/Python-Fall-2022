@@ -20,5 +20,5 @@ class MultipleChoiceQuestion(Question):
 
     def ask(self):
         print(self.prompt)
-        print(",".join(self.choices))
+        print("Choices: " + ",".join(self.choices))
         self.response = input("Your answer: ")
