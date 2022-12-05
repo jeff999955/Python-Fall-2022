@@ -15,5 +15,5 @@ for question in question_list:
     if question.validate():
         print("Correct!")
     else:
-        print("Incorrect!")
+        print(f"Incorrect! The correct answer is {question.answer}.")
         question.show_tutorial()
