@@ -1,3 +1,4 @@
+import json
 from typing import List
 
 from question import Question
@@ -40,15 +41,15 @@ class Lesson:
             print(f"\t{link}")
 
     def to_json(self):
-        return {
-            "name": self.name,
-            "instructions": self._instructions,
-            "questions": [question.to_json() for question in self._questions],
-            "tutorials": self._tutorials,
-        }
+        return json.dumps(
+            self,
+            default=lambda o: o.__dict__,
+            sort_keys=True,
+            indent=4,
+        )
 
     @staticmethod
-    def from_json(self, data) -> Lesson:
+    def from_json(self, data):
         self.name = data["name"]
         self._instructions = data["instructions"]
         self._questions = [
