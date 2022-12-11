@@ -1,3 +1,4 @@
+import json
 from typing import Iterable, Union
 
 
@@ -17,6 +18,21 @@ class Question:
     def validate(self):
         return self.response == self.answer
 
+    def to_json(self):
+        return json.dumps(
+            self,
+            default=lambda o: o.__dict__,
+            sort_keys=True,
+            indent=4,
+        )
+
+    @staticmethod
+    def from_json(data):
+        return Question(
+            prommpt=data["prompt"],
+            answer=data["answer"],
+        )
+
 
 class MultipleChoiceQuestion(Question):
     def __init__(
@@ -34,3 +50,11 @@ class MultipleChoiceQuestion(Question):
         print(self.prompt)
         print("Choices: " + ",".join(self.choices))
         self.response = input("Your answer: ")
+
+    @staticmethod
+    def from_json(data):
+        return MultipleChoiceQuestion(
+            prompt=data["prompt"],
+            answer=data["answer"],
+            choices=data["choices"],
+        )
