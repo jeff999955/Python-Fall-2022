@@ -1,7 +1,7 @@
 import json
 from typing import Dict, List
 
-from question import Question
+from question import MultipleChoiceQuestion, Question
 
 
 class Lesson:
@@ -57,7 +57,7 @@ class Lesson:
         for instruction in data["instructions"]:
             ret.add_instruction(instruction)
         for question in data["questions"]:
-            ret.add_question(Question.from_json(question))
+            ret.add_question(MultipleChoiceQuestion.from_json(question))
         for tutorial in data["tutorials"]:
             ret.add_tutorial(tutorial)
         return ret
