@@ -29,7 +29,7 @@ class Question:
     @staticmethod
     def from_json(data):
         return Question(
-            prommpt=data["prompt"],
+            prompt=data["prompt"],
             answer=data["answer"],
         )
 
