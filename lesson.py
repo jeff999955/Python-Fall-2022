@@ -1,5 +1,5 @@
 import json
-from typing import List
+from typing import Dict, List
 
 from question import Question
 
@@ -41,19 +41,23 @@ class Lesson:
             print(f"\t{link}")
 
     def to_json(self):
+        def beautify(data: Dict) -> Dict:
+            return {key.lstrip("_"): value for key, value in data.items()}
+
         return json.dumps(
             self,
-            default=lambda o: o.__dict__,
+            default=lambda o: beautify(o.__dict__),
             sort_keys=True,
             indent=4,
         )
 
     @staticmethod
-    def from_json(self, data):
-        self.name = data["name"]
-        self._instructions = data["instructions"]
-        self._questions = [
-            Question.from_json(question) for question in data["questions"]
-        ]
-        self._tutorials = data["tutorials"]
-        return self
+    def from_json(data):
+        ret = Lesson(name=data["name"])
+        for instruction in data["instructions"]:
+            ret.add_instruction(instruction)
+        for question in data["questions"]:
+            ret.add_question(Question.from_json(question))
+        for tutorial in data["tutorials"]:
+            ret.add_tutorial(tutorial)
+        return ret
