@@ -52,7 +52,7 @@ class Lesson:
         )
 
     @staticmethod
-    def from_json(data):
+    def from_json(data: Dict):
         ret = Lesson(name=data["name"])
         for instruction in data["instructions"]:
             ret.add_instruction(instruction)

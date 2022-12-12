@@ -1,5 +1,5 @@
 import json
-from typing import Iterable, Union
+from typing import Dict, Iterable, Union
 
 
 class Question:
@@ -27,7 +27,7 @@ class Question:
         )
 
     @staticmethod
-    def from_json(data):
+    def from_json(data: Dict):
         return Question(
             prompt=data["prompt"],
             answer=data["answer"],
@@ -52,7 +52,7 @@ class MultipleChoiceQuestion(Question):
         self.response = input("Your answer: ")
 
     @staticmethod
-    def from_json(data):
+    def from_json(data: Dict):
         return MultipleChoiceQuestion(
             prompt=data["prompt"],
             answer=data["answer"],
