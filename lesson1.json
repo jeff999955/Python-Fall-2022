@@ -1,0 +1,24 @@
+{
+    "instructions": [
+        "列點如下",
+        "1. ..."
+    ],
+    "name": "xd",
+    "questions": [
+        {
+            "answer": "float",
+            "choices": [
+                "int",
+                "float",
+                "str",
+                "bool"
+            ],
+            "prompt": "print(type(0.56)) \u986f\u793a\u7684\u7d50\u679c\u70ba\u4f55?",
+            "response": null
+        }
+    ],
+    "tutorials": [
+        "https://link",
+        "https://link2"
+    ]
+}
