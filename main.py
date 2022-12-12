@@ -1,4 +1,5 @@
 import json
+
 from lesson import Lesson
 from question import MultipleChoiceQuestion
 
@@ -35,6 +36,7 @@ def start_lesson(lesson: Lesson) -> None:
 
 def main() -> None:
     print("Welcome to the Python lesson!")
+    log_file = open("log.txt", "w+")
     while True:
         print("1. Start lesson")
         print("2. Exit")
@@ -44,11 +46,13 @@ def main() -> None:
                 lesson = select_lesson()
             except Exception:
                 print("Invalid choice for the lesson.")
+            lesson.set_logger(log_file)
             start_lesson(lesson)
         elif choice == "2":
             break
         else:
             print("Invalid choice.")
+    log_file.close()
 
 
 if __name__ == "__main__":
