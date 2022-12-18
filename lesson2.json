@@ -1,0 +1,38 @@
+{
+  "instructions": [
+    "Print可以將既有的數值或程式執行完的結果輸出到電腦螢幕上，以便我們確認及進行後續程式的測試等工作。\n\tPrint(*objects, sep=\" \", end=\"\\n\")\nprint中的項目(objects)用逗號(,)分隔。\nsep – 分隔字元，用來間隔多個項目，預設是空格( )。\nend – 結束字元，用來設定以什麼結尾，預設值是換行字元(\\n)。\n\ta=\"Apple\"\n\tb=\"Book\"\n\tc=\"Candy\"\n\td=\"Dog\"\n\tprint(a, b, c, d, sep=\", \", end=\"…\")\n\t→Apple, Book, Candy, Dog…\n此外，print可以輸出指定的文字或是數值，若想同時輸出多個變數的話可以用加號(+)來連結。\n\ta=\"An\"\n\tb=\"apple\"\n\tprint(a + \" \" + b)\n\t→An apple\n但一個print中只能同時輸出數值或是文字，若想同時輸出數值與文字時，必須將數值改成文字後才能輸出，否則會出現Error。\n因此要用到str函數將數值(int)變成文字(str)。\n\ta=\"Apple\"                       a=\"Apple\"\n\tb=50                            b=50\n\tprint(a + str(b))               print(a + b)\n\t→Apple50                        →TypeError: must be str, not int\nPrint語法中，透過字串格式化(%)，可以根據資料型態，將輸出的資料整齊排列出來。\n常見的參數如下所示：\n%d : 以「整數」輸出\n%s : 以「字串」輸出\n%f : 以「浮點數」輸出\n%% : 在輸出的字串中顯示「%」\n%e : 以科學記號的方式輸出\n\ta=\"An\"\n\tb=50\n\tprint(\"%s 的價錢: %d\" % (a, b))\n\t→Apple的價錢: 50\n若對資料型態還並不熟悉，將字串格式化還有一種方法，也就是format語法。\n\tPrint(字串.format(參數))\n這種方法不用考慮資料型態，用大括號{}來表示參數的位置即可。\n當有多個參數時，在{}內放入參數的順序(由0開始)。\n\tPrint(\"{0} 的價格為{1}元.format(\"Apple\", 50))\n\t→Apple的價格為50元\n"
+  ],
+  "name": "unit2-print語法",
+  "questions": [
+    {
+      "answer": "(B) 9937",
+      "choices": ["(A) 1000", "(B) 9937", "(C) 986", "(D) Error"],
+      "response": null
+    },
+    {
+      "answer": "(A) 1000",
+      "choices": ["(A) 1000", "(B) 9937", "(C) 986", "(D) Error"],
+      "response": null
+    },
+    {
+      "answer": "(D) Error",
+      "choices": [
+        "(A) Python number 1",
+        "(B) \"Python number 1\" ",
+        "(C) Python number",
+        "(D) Error"
+      ],
+      "response": null
+    },
+    {
+      "answer": "(C) print(\"The car is big\", \"but cheap\", sep=\", \", end=\".\")",
+      "choices": [
+        "(A) print(\"The car is big\", \"but cheap\")",
+        "(B) print(\"The car is big\", \"but cheap\", sep=\". \", end=\", \")",
+        "(C) print(\"The car is big\", \"but cheap\", sep=\", \", end=\". \")",
+        "(D) print(\"The car is big\", \"but cheap\".)"
+      ],
+      "response": null
+    }
+  ]
+}
