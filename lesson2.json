@@ -5,16 +5,19 @@
   "name": "unit2-print語法",
   "questions": [
     {
+      "prompt": "What is the output of the following code?\nprint(\"Python number\", 1, sep=\" \")",
       "answer": "(B) 9937",
       "choices": ["(A) 1000", "(B) 9937", "(C) 986", "(D) Error"],
       "response": null
     },
     {
+      "prompt": "What is the output of the following code?\nprint(\"Python number\", 1, sep=\" \")",
       "answer": "(A) 1000",
       "choices": ["(A) 1000", "(B) 9937", "(C) 986", "(D) Error"],
       "response": null
     },
     {
+      "prompt": "What is the result of the following code?\nprint(Python number, 1, sep=\" \")",
       "answer": "(D) Error",
       "choices": [
         "(A) Python number 1",
@@ -25,14 +28,18 @@
       "response": null
     },
     {
+      "prompt": "What is the output of the following code?\nprint(\"Python number\", 1, sep=\" \")",
       "answer": "(C) print(\"The car is big\", \"but cheap\", sep=\", \", end=\".\")",
       "choices": [
         "(A) print(\"The car is big\", \"but cheap\")",
-        "(B) print(\"The car is big\", \"but cheap\", sep=\". \", end=\", \")",
-        "(C) print(\"The car is big\", \"but cheap\", sep=\", \", end=\". \")",
+        "(B) print(\"The car is big\", \"but cheap\", sep=\". \", end=\", \")", 
+        "(C) print(\"The car is big\", \"but cheap\", sep=\", \", end=\".\")",
         "(D) print(\"The car is big\", \"but cheap\".)"
       ],
       "response": null
     }
+  ],
+  "tutorials": [
+    "https://www.youtube.com/watch?v=UsCQXe1OHZk"
   ]
 }
