@@ -10,8 +10,7 @@ def select_lesson() -> Lesson:
     if choice in [1, 2]:
         with open(f"lesson{choice}.json") as fp:
             return Lesson.from_json(json.load(fp))
-    else:
-        raise ValueError("Invalid choice")
+    return None
 
 
 def start_lesson(lesson: Lesson) -> None:
@@ -42,10 +41,9 @@ def main() -> None:
         print("2. Exit")
         choice = input("Your choice: ")
         if choice == "1":
-            try:
-                lesson = select_lesson()
-            except Exception:
-                print("Invalid choice for the lesson.")
+            lesson = select_lesson()
+            if not Lesson:
+                continue
             lesson.set_logger(log_file)
             start_lesson(lesson)
         elif choice == "2":
